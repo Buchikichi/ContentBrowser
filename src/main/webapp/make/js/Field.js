@@ -51,6 +51,8 @@ Field.prototype.initBackground = function() {
 Field.prototype.initInfo = function() {
 	this.name = '';
 	this.addr = '';
+	this.month = '';
+	this.day = '';
 	this.dob = '';
 	this.number = '';
 	this.gender = '';
@@ -63,13 +65,13 @@ Field.prototype.setupImage = function(src) {
 
 Field.prototype.moveH = function(delta) {
 	if (!this.fixed) {
-		this.x += delta;
+		this.x += delta / this.magnification;
 	}
 };
 
 Field.prototype.moveV = function(delta) {
 	if (!this.fixed) {
-		this.y += delta;
+		this.y += delta / this.magnification;
 	}
 };
 
@@ -109,24 +111,33 @@ Field.prototype.drawCard = function() {
 	var fontFamily = "'cursive'"; // 'ＭＳ 明朝'
 
 	ctx.drawImage(this.bg, 0, 0);
-	ctx.fillStyle = 'rgba(0, 0, 0, 1)';
+	ctx.fillStyle = 'rgba(32, 32, 32, .8)';
 	ctx.font = "bold 26px " + fontFamily;
-	ctx.fillText(this.name, 90, 43, 440);
+	ctx.fillText(this.name, 100, 43, 430);
 	ctx.font = "bold 20px " + fontFamily;
-	ctx.fillText(this.addr, 90, 90, 440);
+	ctx.fillText(this.addr, 100, 90, 430);
 	ctx.font = "bold 20px " + fontFamily;
 	ctx.fillText(this.gender, 592, 112);
-	ctx.font = "bold 16px " + fontFamily;
-	ctx.fillText(this.dob, 300, 145, 300);
 	ctx.font = "bold 38px " + fontFamily;
 	ctx.fillText(this.number, 300, 210);
+	// dob
+	var dob = '';
+	if (0 < this.month.length) {
+		dob += this.month + '月';
+	}
+	if (0 < this.day.length) {
+		dob += this.day + '日';
+	}
+	dob += this.dob;
+	ctx.font = "bold 16px " + fontFamily;
+	ctx.fillText(dob, 300, 145, 300);
 	// アピール
 	ctx.font = "bold 20px " + fontFamily;
-	var appeal = this.splitText(this.appeal, 380);
+	var appeal = this.splitText(this.appeal, 375);
 	var y = 262;
 
 	appeal.forEach(function(line) {
-		//ctx.strokeRect(238, y - 20, 380, 20);
+		//ctx.strokeRect(238, y - 20, 375, 20);
 		ctx.fillText(line, 238, y);
 		y += 22;
 	});

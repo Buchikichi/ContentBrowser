@@ -10,8 +10,19 @@
 <script type="text/javascript" defer src="js/Field.js"></script>
 <script type="text/javascript" defer src="js/index.js"></script>
 <style type="text/css">
+#trim {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+}
 #magni {
 	width: 55px;
+}
+.controlgroup-textinput {
+	padding-top: .22em;
+	padding-bottom: .22em;
 }
 </style>
 </head>
@@ -46,20 +57,89 @@
         <canvas id="canvas" width="640" height="400"></canvas>
         <div class="ui-body">
         <form id="pictureForm">
-          <label for="magni">おおきさ:</label>
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>おおきさ:</legend>
+            <input name="zoom" id="zoomE" value=".125" type="radio"/>
+            <label for="zoomE">1/8</label>
+            <input name="zoom" id="zoomQ" value=".25" type="radio"/>
+            <label for="zoomQ">1/4</label>
+            <input name="zoom" id="zoomH" value=".5" type="radio"/>
+            <label for="zoomH">1/2</label>
+            <input name="zoom" id="zoom1" value="1" type="radio" checked="checked"/>
+            <label for="zoom1">x1</label>
+            <input name="zoom" id="zoom2" value="2" type="radio"/>
+            <label for="zoom2">x2</label>
+          </fieldset>
+          <label for="magni">びちょうせい:</label>
           <input id="magni" type="range" value="1.0" min=".1" max="1.5" step=".01"/>
           <input id="fixButton" type="button" value="しゃしんけってい"/>
         </form>
         <form id="infoForm">
-          <label for="name">にゃまえ:</label><input id="name" type="text"/>
-          <label for="addr">おうち:</label><input id="addr" type="text"/>
+          <label for="name">にゃまえ:</label><input id="name" type="text" maxlength="40" data-clear-btn="true"/>
+          <label for="addr">おうち:</label><input id="addr" type="text" maxlength="40" data-clear-btn="true"/>
           <fieldset data-role="controlgroup" data-type="horizontal">
             <input name="gender" id="gender-m" value="♂" checked="checked" type="radio">
-            <label for="gender-m">おとこ</label>
+            <label for="gender-m">おとこのこ</label>
             <input name="gender" id="gender-f" value="♀" type="radio">
-            <label for="gender-f">おんな</label>
+            <label for="gender-f">おんなのこ</label>
           </fieldset>
-          <label for="dob">たんじょうび:</label><input id="dob" type="text"/>
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>たんじょうび:</legend>
+            <select id="month">
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            <button type="button">月</button>
+            <select id="day">
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+            <button type="button">日</button>
+            <input id="dob" type="text" maxlength="10" data-wrapper-class="controlgroup-textinput ui-btn"/>
+            <button id="mightButton" type="button">かも...</button>
+            <button id="secretButton" type="button" data-reset="true">ひみちゅ</button>
+          </fieldset>
           <label for="number">ばんごう(7もじまで):</label><input id="number" type="text" maxlength="7"/>
           <label for="appeal">アピール:</label><textarea id="appeal" rows="2" cols=""></textarea>
           <a id="finishButton" href="#" class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-action">かくてい</a>

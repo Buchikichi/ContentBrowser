@@ -19,7 +19,7 @@ $(document).ready(function() {
 			field.draw();
 		};
 		reader.readAsDataURL(file);
-		field.resetParams();
+		resetTrimmingParams(field);
 		$(':mobile-pagecontainer').pagecontainer('change', '#trim');
 	});
 
@@ -40,34 +40,45 @@ $(document).ready(function() {
 
 //console.log('show:' + id);
 		if (id == 'select') {
-			picture.val('');
-			magni.val(1);
+			resetTrimmingParams(field);
 			magni.slider('refresh');
-			field.resetParams();
 			setupTrimmingControls(field);
 		} else if (id == 'trim') {
 			// nop
 		}
+		$('[name=zoom]').checkboxradio('refresh');
 	});
 	console.log('Ready!!!');
 });
 
+function resetTrimmingParams(field) {
+	var rand = '000000' + parseInt(Math.random() * 10000000);
+	var len = rand.length;
+
+	field.resetParams();
+	$('#picture').val('');
+	$('[name=zoom]').val(['1']);
+	$('#magni').val(1);
+	$('#number').val(rand.substring(len - 7, len)).change();
+}
 function initTrimmingPage(field) {
 	var cx = 0;
 	var cy = 0;
 	var which = 0;
 	var canvas = $('#canvas');
+	var zoom = function() {
+		var magni = $('#magni').val();
+		var val = $('[name=zoom]:checked').val();
+
+		field.magnification = magni * val;
+		field.draw();
+	}
 
 	$('#trim').on('pagecreate', function() {
-		var magni = $('#magni');
-
-		magni.on('change', function() {
-			var val = $(this).val();
-	
-			field.magnification = magni.val();
-			field.draw();
-		});
+		$('#magni').on('change', zoom);
 	});
+	$('#zoom1').prop('checked', true);
+	$('[name=zoom]').change(zoom);
 	var start = function(e) {
 		var isMouse = e.type.match(/^mouse/);
 
@@ -118,24 +129,18 @@ function initTrimmingPage(field) {
 	canvas.bind('touchmove', touch);
 	canvas.bind('touchend', end);
 
-	var name = $('#name');
-	var addr = $('#addr');
-	var dob = $('#dob');
+	var inputFields = ['name', 'addr', 'month', 'day', 'dob', 'appeal'];
 	var number = $('#number');
 	var gender = $('[name=gender]');
-	var appeal = $('#appeal');
 
-	name.change(function() {
-		field.name = $(this).val();
-		field.draw();
-	});
-	addr.change(function() {
-		field.addr = $(this).val();
-		field.draw();
-	});
-	dob.change(function() {
-		field.dob = $(this).val();
-		field.draw();
+	inputFields.forEach(function(nm) {
+		var elem = $('#' + nm);
+
+		elem.change(function() {
+			field[nm] = $(this).val();
+			field.draw();
+		});
+		elem.change();
 	});
 	number.change(function() {
 		field.number = createMynumber($(this).val());
@@ -148,16 +153,23 @@ function initTrimmingPage(field) {
 			field.draw();
 		}
 	});
-	appeal.change(function() {
-		field.appeal = $(this).val();
-		field.draw();
-	});
-	name.change();
-	addr.change();
-	dob.change();
 	number.change();
 	gender.change();
-	appeal.change();
+	$('#secretButton, #mightButton').click(function() {
+		var btn = $(this);
+		var text = btn.text();
+		var dob = $('#dob');
+
+		if (dob.val().indexOf(text) == -1) {
+
+			if (btn.attr('data-reset')) {
+				$('#month').val('').selectmenu('refresh').change();
+				$('#day').val('').selectmenu('refresh').change();
+			}
+			dob.val(text);
+			dob.change();
+		}
+	});
 	$('#fixButton').click(function() {
 		field.fixed = true;
 		setupTrimmingControls(field);
