@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name=viewport content="width=device-width, initial-scale=1"/>
+<title>マイにゃんばーカード</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script type="text/javascript" defer src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" defer src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" defer src="js/Field.js"></script>
+<script type="text/javascript" defer src="js/index.js"></script>
+<style type="text/css">
+#magni {
+	width: 55px;
+}
+</style>
+</head>
+
+<body>
+  <div id="select" data-role="page">
+    <div data-role="header" data-theme="b" data-position="fixed">
+      <a href="/" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-back ui-btn-icon-notext"></a>
+      <h1>マイにゃんばーカード</h1>
+    </div>
+    <div data-role="content">
+      <div class="ui-body-a ui-corner-all">
+        <div class="ui-bar ui-bar-a ui-corner-all">しゃしんをえらぶ</div>
+        <div class="ui-body">
+          <form>
+            <label for="picture">しゃしん:</label>
+            <input id="picture" name="picture" type="file"/>
+          </form>
+          ※写真や個猫情報がサーバーに保存される事はありません。
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="trim" data-role="page">
+    <div data-role="header" data-theme="b" data-position="fixed">
+      <a href="#select" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-back ui-btn-icon-notext"></a>
+      <h1>マイにゃんばーカード</h1>
+    </div>
+    <div data-role="content">
+      <div class="ui-body-a ui-corner-all">
+        <div class="ui-bar ui-bar-a ui-corner-all">せってい</div>
+        <canvas id="canvas" width="640" height="400"></canvas>
+        <div class="ui-body">
+        <form id="pictureForm">
+          <label for="magni">おおきさ:</label>
+          <input id="magni" type="range" value="1.0" min=".1" max="1.5" step=".01"/>
+          <input id="fixButton" type="button" value="しゃしんけってい"/>
+        </form>
+        <form id="infoForm">
+          <label for="name">にゃまえ:</label><input id="name" type="text"/>
+          <label for="addr">おうち:</label><input id="addr" type="text"/>
+          <fieldset data-role="controlgroup" data-type="horizontal">
+            <input name="gender" id="gender-m" value="♂" checked="checked" type="radio">
+            <label for="gender-m">おとこ</label>
+            <input name="gender" id="gender-f" value="♀" type="radio">
+            <label for="gender-f">おんな</label>
+          </fieldset>
+          <label for="dob">たんじょうび:</label><input id="dob" type="text"/>
+          <label for="number">ばんごう(7もじまで):</label><input id="number" type="text" maxlength="7"/>
+          <label for="appeal">アピール:</label><textarea id="appeal" rows="2" cols=""></textarea>
+          <a id="finishButton" href="#" class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-action">かくてい</a>
+          <a id="trimButton" href="#" class="ui-btn ui-corner-all ui-btn-icon-left ui-icon-back">しゃしんちょうせい</a>
+        </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="finish" data-role="page">
+    <div data-role="header" data-theme="b" data-position="fixed">
+      <a href="#trim" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-back ui-btn-icon-notext"></a>
+      <h1>マイにゃんばーカード</h1>
+    </div>
+    <div data-role="content">
+      <div class="ui-body-a ui-corner-all">
+        <div class="ui-bar ui-bar-a ui-corner-all">カードをほぞん</div>
+        <div class="ui-body" style="text-align: center;">
+          <img id="cardImage" name="card" title="myNyumberCard"/><br/>
+          スマートフォンの場合、画像を長押しで保存できます。<br/>
+          パソコンの場合、画像を右クリックで保存できます。
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

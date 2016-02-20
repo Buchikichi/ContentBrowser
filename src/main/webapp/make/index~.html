@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name=viewport content="width=device-width, initial-scale=1"/>
+<title>マイにゃんばーカード</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+<script type="text/javascript" defer src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" defer src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" defer src="js/index.js"></script>
+<style type="text/css">
+#uploadArea {
+	display: none;
+}
+</style>
+</head>
+
+<body>
+  <div data-role="page">
+    <div data-role="header" data-theme="b" data-position="fixed">
+      <a href="/" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-back ui-btn-icon-notext"></a>
+      <h1>マイにゃんばーカード申請</h1>
+    </div>
+    <div data-role="content">
+      <div id="uploadArea" class="ui-body-a ui-corner-all">
+        <form method="post" enctype="multipart/form-data" data-ajax="false">
+          <div class="ui-bar ui-bar-a ui-corner-all">画像送信</div>
+          <div class="ui-body">
+            <label for="name">にゃまえ:</label>
+            <input id="name" type="text" name="name"/>
+            <label for="picture">しゃしん(1Mまで):</label>
+            <input id="picture" type="file" name="picture"/>
+            <input type="submit" value="送信"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

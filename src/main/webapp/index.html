@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name=viewport content="width=device-width, initial-scale=1"/>
+<title>マイにゃんばーカード</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+<style type="text/css">
+div.photo {
+	text-align: center;
+}
+div.photo img {
+	border-radius: 4px;
+}
+</style>
+<script type="text/javascript" async src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" async src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+  <div data-role="page">
+    <div data-role="header" data-theme="b" data-position="fixed">
+      <h1>マイにゃんばーカード</h1>
+      <a href="#aboutPanel" class="ui-btn ui-btn-right ui-corner-all ui-btn-inline ui-btn-icon-left ui-icon-info ui-btn-icon-notext"></a>
+    </div>
+    <div data-role="content">
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>マイにゃんばー</h3>
+        <div class="ui-body-a ui-corner-all">
+          <div class="ui-bar ui-bar-a ui-corner-all">マイにゃんばー(個猫番号)とは</div>
+          <div class="ui-body">
+・にゃんこが持つ12桁の番号のことです。<br/>
+・税や年金、雇用保険にゃどの行政手続きには使えません。<br/>
+          </div>
+        </div>
+        <div class="ui-body-a ui-corner-all">
+          <div class="ui-bar ui-bar-a ui-corner-all">マイにゃんばーカードについて</div>
+          <div class="ui-body">
+マイにゃんばーカードは、人間の申請により画像形式で交付され、自己満足的にゃ身分証明書として利用でき、また、印刷をして何の役にも立たにゃいカードを作成できます。
+交付手数料は、当面の間無料です。<br/>
+          </div>
+        </div>
+      </div>
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>マイにゃんばーカード</h3>
+        <div class="ui-body-a ui-corner-all">
+          <div class="ui-bar ui-bar-a ui-corner-all">マイにゃんばーカードの利用について</div>
+          <div class="ui-body">
+            マイにゃんばーカードの利用例。
+          </div>
+        </div>
+      </div>
+      <div data-role="collapsible" data-collapsed="false">
+        <h3>申請</h3>
+        <div class="ui-body-a ui-corner-all">
+          <div class="ui-bar ui-bar-a ui-corner-all">マイにゃんばーカード作成</div>
+          <div class="ui-body">パソコンやスマートフォンで、マイにゃんばーカードを申請できます。</div>
+          <a href="./make/" data-ajax="false" class="ui-btn ui-corner-all ui-mini ui-btn-inline ui-btn-icon-left ui-icon-power">Webで作成</a>
+        </div>
+      </div>
+    </div>
+    <div id="aboutPanel" data-role="panel" data-position="right" data-position-fixed="true">
+      <div class="ui-bar ui-bar-a ui-corner-all">ねここくらぶ</div>
+      <div class="photo"><img src="img/nekokoclub.jpeg"/></div>
+      <div class="ui-body ui-body-a ui-corner-all">
+        ねここくらぶ説明。<br/>
+        <a href="http://blog.kit.to/" target="_blank">こねここぶろぐ</a><br/>
+        <a href="https://www.facebook.com/nekokoclub" target="_blank">Facebook</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
