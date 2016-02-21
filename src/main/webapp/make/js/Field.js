@@ -111,11 +111,11 @@ Field.prototype.drawCard = function() {
 	var fontFamily = "'cursive'"; // 'ＭＳ 明朝'
 
 	ctx.drawImage(this.bg, 0, 0);
-	ctx.fillStyle = 'rgba(32, 32, 32, .8)';
+	ctx.fillStyle = 'rgba(40, 40, 40, .8)';
 	ctx.font = "bold 26px " + fontFamily;
-	ctx.fillText(this.name, 100, 43, 430);
+	ctx.fillText(this.name, 100, 43, 400);
 	ctx.font = "bold 20px " + fontFamily;
-	ctx.fillText(this.addr, 100, 90, 430);
+	ctx.fillText(this.addr, 100, 90, 400);
 	ctx.font = "bold 20px " + fontFamily;
 	ctx.fillText(this.gender, 592, 112);
 	ctx.font = "bold 38px " + fontFamily;

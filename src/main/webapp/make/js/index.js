@@ -52,13 +52,16 @@ $(document).ready(function() {
 });
 
 function resetTrimmingParams(field) {
-	var rand = '000000' + parseInt(Math.random() * 10000000);
-	var len = rand.length;
-
 	field.resetParams();
 	$('#picture').val('');
 	$('[name=zoom]').val(['1']);
 	$('#magni').val(1);
+	refreshNumber();
+}
+function refreshNumber() {
+	var rand = '000000' + parseInt(Math.random() * 10000000);
+	var len = rand.length;
+
 	$('#number').val(rand.substring(len - 7, len)).change();
 }
 function initTrimmingPage(field) {
@@ -169,6 +172,9 @@ function initTrimmingPage(field) {
 			dob.val(text);
 			dob.change();
 		}
+	});
+	$('#refreshButton').click(function() {
+		refreshNumber();
 	});
 	$('#fixButton').click(function() {
 		field.fixed = true;
