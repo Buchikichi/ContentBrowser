@@ -30,7 +30,7 @@ div.photo img {
           <div class="ui-bar ui-bar-a ui-corner-all">マイにゃんばー(個猫番号)とは</div>
           <div class="ui-body">
 ・にゃんこのために発行できる12桁の番号のことです。<br/>
-・最初の４桁222*は固定で、それに続く７桁を自由に決められます。12桁目は自動で付与されます。<br/>
+・最初の４桁 '222ω' は固定で、それに続く７桁を自由に決められます。12桁目は自動で付与されます。<br/>
 ・独自の番号を出力するものではありません。沢山の人が利用すると、同じ番号がかぶることもありますが、役にたたずの番号なので気にしにゃいでください。<br/>
 ・個人的、個猫的に楽しむ、役にたたにゃい番号です。公的サービスには使えません。
           </div>
@@ -53,6 +53,22 @@ div.photo img {
 お話のネタににゃるかもしれません。もしかして、モテるかも！ <br/>
           </div>
         </div>
+        <div class="ui-body-a ui-corner-all">
+          <div class="ui-bar ui-bar-a ui-corner-all">サンプル</div>
+          <div class="ui-body">
+            <div data-role="controlgroup" data-type="horizontal">
+              <input name="sample" id="sample-nekoko" value="nekoko" type="radio" checked="checked"/>
+              <label for="sample-nekoko">ねここ</label>
+              <input name="sample" id="sample-nach" value="nach" type="radio"/>
+              <label for="sample-nach">なっちゃん</label>
+              <input name="sample" id="sample-kuru" value="kuru" type="radio"/>
+              <label for="sample-kuru">くるちゃん</label>
+              <input name="sample" id="sample-may" value="may" type="radio"/>
+              <label for="sample-may">めいちゃん</label>
+            </div>
+            <img id="sampleImage" src="img/sample-nekoko.png"/>
+          </div>
+        </div>
       </div>
       <div data-role="collapsible" data-collapsed="false">
         <h3>作成</h3>
@@ -60,7 +76,7 @@ div.photo img {
           <div class="ui-bar ui-bar-a ui-corner-all">個人情報および個猫情報について</div>
           <div class="ui-body">
 作成時に使用された画像や入力された情報は、マイにゃんばー作成のためにのみ使用され、インターネット上、サーバー上に画像や情報は保存されません。<br/>
-作成後に印刷されたカードの管理は、各自でお願いします。
+作成後の画像や印刷されたカードの管理は、各自でお願いします。
           </div>
         </div>
         <div class="ui-body-a ui-corner-all">
@@ -114,11 +130,21 @@ div.photo img {
       <div class="ui-body ui-body-a ui-corner-all">
         NEKOKO CLUBとは…<br/>
         "NO CAT NO LIFE（猫のいない人生なんて）"をモットーに、猫を愛する人、猫のためのサイトやアプリを作成しています。<br/>
-        <a href="http://blog.kit.to/" target="_blank">こねここぶろぐ</a><br/>
+        <a href="https://www.facebook.com/nekokoclub" target="_blank">Facebook</a><br/>
         <a href="https://twitter.com/nekokoclub" target="_blank">Twitter</a><br/>
-        <a href="https://www.facebook.com/nekokoclub" target="_blank">Facebook</a>
+        <a href="http://blog.kit.to/" target="_blank">こねここぶろぐ</a>
       </div>
     </div>
   </div>
+<script>
+window.onload = function() {
+	$('[name=sample]').change(function() {
+		var val = $(this).val();
+		var src = 'img/sample-' + val + '.png';
+
+		$('#sampleImage').attr('src', src);
+	});
+};
+</script>
 </body>
 </html>

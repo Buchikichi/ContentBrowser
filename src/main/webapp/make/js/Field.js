@@ -113,11 +113,11 @@ Field.prototype.drawCard = function() {
 	ctx.drawImage(this.bg, 0, 0);
 	ctx.fillStyle = 'rgba(32, 32, 32, .7)';
 	ctx.font = "bold 26px " + fontFamily;
-	ctx.fillText(this.name, 100, 43, 400);
+	ctx.fillText(this.name, 100, 43, 350);
 	ctx.font = "bold 20px " + fontFamily;
-	ctx.fillText(this.addr, 100, 90, 400);
-	ctx.font = "bold 20px " + fontFamily;
-	ctx.fillText(this.gender, 592, 112);
+	ctx.fillText(this.addr, 100, 90, 350);
+	ctx.font = "bold 26px " + fontFamily;
+	ctx.fillText(this.gender, 570, 147);
 	ctx.font = "bold 48px " + fontFamily;
 	ctx.fillText(this.number, 300, 214, 300);
 	// dob
@@ -129,8 +129,8 @@ Field.prototype.drawCard = function() {
 		dob += this.day + '日';
 	}
 	dob += this.dob;
-	ctx.font = "bold 16px " + fontFamily;
-	ctx.fillText(dob, 300, 145, 300);
+	ctx.font = "bold 20px " + fontFamily;
+	ctx.fillText(dob, 305, 143, 200);
 	// アピール
 	ctx.font = "bold 20px " + fontFamily;
 	var appeal = this.splitText(this.appeal, 375);

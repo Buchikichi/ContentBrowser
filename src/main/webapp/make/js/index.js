@@ -209,7 +209,7 @@ function createMynumber(num7) {
 		num11 += '0';
 	}
 	var full = num11 + calcCD(num11);
-	var hi = full.substring(0, 3) + "*";
+	var hi = full.substring(0, 3) + 'ω';
 	var mid = full.substring(4, 8);
 	var lo = full.substring(8, 12);
 
