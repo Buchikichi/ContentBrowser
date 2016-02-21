@@ -111,15 +111,15 @@ Field.prototype.drawCard = function() {
 	var fontFamily = "'cursive'"; // 'ＭＳ 明朝'
 
 	ctx.drawImage(this.bg, 0, 0);
-	ctx.fillStyle = 'rgba(40, 40, 40, .8)';
+	ctx.fillStyle = 'rgba(32, 32, 32, .7)';
 	ctx.font = "bold 26px " + fontFamily;
 	ctx.fillText(this.name, 100, 43, 400);
 	ctx.font = "bold 20px " + fontFamily;
 	ctx.fillText(this.addr, 100, 90, 400);
 	ctx.font = "bold 20px " + fontFamily;
 	ctx.fillText(this.gender, 592, 112);
-	ctx.font = "bold 38px " + fontFamily;
-	ctx.fillText(this.number, 300, 210);
+	ctx.font = "bold 48px " + fontFamily;
+	ctx.fillText(this.number, 300, 214, 300);
 	// dob
 	var dob = '';
 	if (0 < this.month.length) {

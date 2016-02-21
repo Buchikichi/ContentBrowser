@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name=viewport content="width=device-width, initial-scale=1"/>
+<title>マイにゃんばーカード</title>
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+<style type="text/css">
+</style>
+<script type="text/javascript" async src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" async src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+  <div data-role="page">
+    <div data-role="header" data-theme="b" data-position="fixed">
+      <a href="/" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-back ui-btn-icon-notext"></a>
+      <h1>マイにゃんばーカード印刷</h1>
+    </div>
+    <div data-role="content">
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>Macをご利用の場合</h3>
+        <div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-mini="true">
+          <div data-role="collapsible">
+            <h3>189dpiにするには</h3>
+            <div>
+<img src="img/mac001.png"/><br/>
+プレビューで画像を開きます。<br/>
+<br/>
+<img src="img/mac002.png"/><br/>
+メニュー[ツール]-[サイズを調整...]を選択します。<br/>
+<br/>
+<img src="img/mac003.png"/><br/>
+解像度に 189を設定して [OK]ボタンを押します。
+            </div>
+          </div>
+          <div data-role="collapsible">
+            <h3>印刷にするには</h3>
+            <div>
+<img src="img/mac004.png"/><br/>
+メニュー[ファイル]-[プリント...]を選択します。<br/>
+<br/>
+<img src="img/mac005.png"/><br/>
+印刷される画像の大きさを確認して[プリント]します。
+            </div>
+          </div>
+        </div>
+      </div>
+      <div data-role="collapsible" data-collapsed="true">
+        <h3>Windowsをご利用の場合</h3>
+        <div data-role="collapsibleset" data-theme="a" data-content-theme="a" data-mini="true">
+          <div data-role="collapsible">
+            <h3>189dpiにするには</h3>
+            <div>
+Windowsの標準機能で、画像の解像度(dpi)を変更する方法はなさそうです。<br/>
+以下に、2つの例をご紹介します。<br/>
+・解像度変更なしで印刷(印刷時の設定で、大きさを合わせる)<br/>
+・解像度を変更して印刷する
+            </div>
+          </div>
+          <div data-role="collapsible">
+            <h3>解像度変更なしで印刷する方法</h3>
+            <div>
+画像を右クリックして「印刷(P)」を選択します。<br/><br/>
+<img src="img/win001.png"/><br/>
+右のリストの「定期券サイズ」を選択します。 <br/>
+「写真をフレームに合わせる」のチェックをはずして印刷します。
+            </div>
+          </div>
+          <div data-role="collapsible">
+            <h3>解像度を変更する方法</h3>
+            <div>
+例えば、<a href="https://ja.wikipedia.org/wiki/IrfanView" target="_blank">IrfanView</a>というソフトを使います。<br/><br/>
+<img src="img/win002.png"/><br/>
+まず、解像度を変更する画像を開いて、ツールバーの「i」ボタンを押します。<br/><br/>
+<img src="img/win003.png"/><br/>
+「Resolution:」に[189]x[189]DPI を指定して[Change]ボタンを押します。 <br/>
+[OK]ボタンを押して、その後上書き保存します。
+            </div>
+          </div>
+          <div data-role="collapsible">
+            <h3>解像度変更後に印刷する方法</h3>
+            <div>
+<img src="img/win004.png"/><br/>
+画像を「ペイント」で開いて、イメージのプロパティを表示して、解像度が189 DPIになっている事を確認します。<br/>
+189 DPIになっていない場合は、解像度の変更をやり直してください。<br/>
+<br/>
+<img src="img/win005.png"/><br/>
+「印刷プレビュー」を表示し、「印刷プレビュー」リボンの中の「ページ設定」を選択します。<br/>
+<br/>
+<img src="img/win006.png"/><br/>
+「ページ設定」の「拡大縮小」の「調整」を選択して[OK]を押します。<br/>
+<br/>
+<img src="img/win007.png"/><br/>
+A4用紙に対して、画像がカードサイズの大きさになります。<br/>
+大きさを確認後「印刷プレビュー」リボンの中の「印刷」を選択して印刷します。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!--  -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74094631-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!--  -->
+</body>
+</html>
